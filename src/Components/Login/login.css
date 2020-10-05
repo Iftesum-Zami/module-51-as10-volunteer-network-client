@@ -1,0 +1,21 @@
+.googleBtn {
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: 1px solid gray;
+    background-color: white;
+    width: 250px;
+    padding: 5px;
+}
+
+.iconImg{
+    width: 25px;
+    height: 25px;
+}
+
+.borderStyle{
+    border: 1px solid rgb(173, 193, 230);
+    border-radius: 5px;
+    padding: 25px;
+    height: 280px;
+    width: 500px;
+}
