@@ -1,18 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import Header from '../Header/Header';
 import Volunteer from '../Volunteer/Volunteer';
 
 const Home = () => {
     const [volunteer, setVolunteer] = useState([]);
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    // const [volunteerWork, setVolunteerWork] = useContext(UserContext);
+
     useEffect(() => {
         fetch('http://www.json-generator.com/api/json/get/bVgwFRGbFK?indent=2')
         .then(res => res.json())
-        .then(data => 
+        .then(data => {
             setVolunteer(data)
-        )
+        })
     }, [])
+
+    const handleUser = (singleWork) => {
+        const volunteerWork = {...loggedInUser, ...singleWork};
+        setLoggedInUser(volunteerWork)
+    }
 
     return (
         <div>
@@ -34,7 +43,7 @@ const Home = () => {
                 <div style={{display: 'flex'}} className="row">
                     {
                         volunteer.map(work => 
-                            <Link to="/register" style={{textDecoration:"none"}}>
+                            <Link onClick={() => handleUser(work)} to={loggedInUser.name? "/register" : "/home"} style={{textDecoration:"none"}}>
                                 <Volunteer key={work.id} work={work}></Volunteer>
                             </Link>
                         )

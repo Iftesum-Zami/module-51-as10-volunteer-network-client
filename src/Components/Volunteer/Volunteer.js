@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import { UserContext } from '../../App';
 
 const useStyles = makeStyles({
   root: {
@@ -17,10 +18,12 @@ const useStyles = makeStyles({
 });
 
 const Volunteer = (props) => {
-    const classes = useStyles();
-
     const {id, url, title} = props.work;
+    // console.log(props.work)
+    // const [volunteerWork, setVolunteerWork] = useContext(UserContext);
+    // setVolunteerWork(props.work)
 
+    const classes = useStyles();
     const cardStyle = {
         margin: '10px'
     }

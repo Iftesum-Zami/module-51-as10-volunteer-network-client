@@ -16,18 +16,15 @@ export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  const [volunteerWork, setVolunteerWork] = useState({});
 
   return (
     <div className="">
-      <UserContext.Provider value={[loggedInUser, setLoggedInUser, volunteerWork, setVolunteerWork]}>
-      <p>Name: {loggedInUser.name}</p>
-      <p>Title: {volunteerWork.title}</p>
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <Router>
           <Switch>
-            <Route path="/home">
+            <PrivateRoute path="/home">
               <Home></Home>
-            </Route>
+            </PrivateRoute>
 
             <Route path="/login">
               <Login></Login>

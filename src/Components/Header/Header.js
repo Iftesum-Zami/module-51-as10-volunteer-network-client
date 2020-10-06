@@ -18,7 +18,7 @@ const Header = () => {
                 padding:"5px 20px"  
             }}>
                 <div>
-                        <Link to="/"> 
+                        <Link to="/home"> 
                             <img style={{height:"40px"}} src={logo} alt=""/>
                         </Link>
                 </div>
