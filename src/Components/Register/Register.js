@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Register = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  // const [volunteerWork, setVolunteerWork] = useContext(UserContext);
 
   const [selectedDate, setSelectedDate] = useState({
     date: new Date()
@@ -45,7 +44,7 @@ const Register = () => {
 
   const handleVolunteer = () => {
     const userWork = {...loggedInUser, ...selectedDate};
-    fetch('http://localhost:5000/addWork', {
+    fetch('https://obscure-coast-50402.herokuapp.com/addWork', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(userWork)
@@ -94,22 +93,6 @@ const Register = () => {
                       />
                     </Grid>
                   </MuiPickersUtilsProvider>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                   <Link style={{textDecoration:"none"}} to="events">
                     <Button type="submit" onClick={handleVolunteer} style={{width: '350px'}} variant="contained" color="primary">

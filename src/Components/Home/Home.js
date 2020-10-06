@@ -8,10 +8,9 @@ const Home = () => {
     const [volunteer, setVolunteer] = useState([]);
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    // const [volunteerWork, setVolunteerWork] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://www.json-generator.com/api/json/get/bVgwFRGbFK?indent=2')
+        fetch('https://obscure-coast-50402.herokuapp.com/allVolunteerWork')
         .then(res => res.json())
         .then(data => {
             setVolunteer(data)

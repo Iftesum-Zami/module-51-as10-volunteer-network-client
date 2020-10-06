@@ -11,7 +11,7 @@ const SingleEvent = (props) => {
     }
 
     const deleteEvent = (id, event) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://obscure-coast-50402.herokuapp.com/delete/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())
@@ -32,7 +32,7 @@ const SingleEvent = (props) => {
                     <h3>{title}</h3>
                     <p>Name: {name}</p>
                     <p>Date: {new Date(date).toDateString('dd/MM/yyyy')}</p>
-                    <button onClick={() => deleteEvent(_id,) }
+                    <button onClick={() => deleteEvent(_id) }
                         type="button"
                         className="btn btn-info">
                             Cancel

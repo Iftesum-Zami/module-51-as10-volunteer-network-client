@@ -11,6 +11,8 @@ import {
   Route,
 } from "react-router-dom";
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import NotFound from './Components/NotFound/NotFound';
+import Admin from './Components/Admin/Admin';
 
 export const UserContext = createContext();
 
@@ -38,13 +40,17 @@ function App() {
               <Events></Events>
             </PrivateRoute>
 
+            <Route path="/admin">
+              <Admin></Admin>
+            </Route>
+
             <Route exact path="/">
               <Home></Home>
             </Route>
 
-            {/* <Route path="*">
+            <Route path="*">
               <NotFound></NotFound>
-            </Route> */}
+            </Route>
 
           </Switch>
         </Router>

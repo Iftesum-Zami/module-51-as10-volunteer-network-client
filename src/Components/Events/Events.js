@@ -8,7 +8,7 @@ const Events = () => {
     const [events, setEvents] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/events?email='+loggedInUser.email)
+        fetch('https://obscure-coast-50402.herokuapp.com/events?email='+loggedInUser.email)
         .then(res => res.json())
         .then(data => setEvents(data))
     }, [])
@@ -17,7 +17,8 @@ const Events = () => {
         <div>
             <Header></Header>
             <div className="container">
-                <h6 style={{textAlign: 'center'}}>you have: {events.length} volunteer works</h6>
+                <h5 style={{textAlign: 'center'}}>You have: {events.length} volunteer works</h5>
+                <p style={{textAlign: 'center'}}> (note: refresh the page if your volunteer work not added or deleted yet) </p>
                 {
                     events.map(event => <SingleEvent events={event}></SingleEvent>)
                 }
