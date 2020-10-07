@@ -43,16 +43,13 @@ const Register = () => {
   };
 
   const handleVolunteer = () => {
-    const userWork = {...loggedInUser, ...selectedDate};
-    fetch('https://obscure-coast-50402.herokuapp.com/addWork', {
+    const newEvent = {...loggedInUser, ...selectedDate};
+    fetch('https://obscure-coast-50402.herokuapp.com/addEvent', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(userWork)
+      body: JSON.stringify(newEvent)
     })
     .then(res => res.json())
-    .then(data => {
-      console.log(data);
-    })
   }
 
     const classes = useStyles();
@@ -94,7 +91,7 @@ const Register = () => {
                     </Grid>
                   </MuiPickersUtilsProvider>
 
-                  <Link style={{textDecoration:"none"}} to="events">
+                  <Link to="/events" style={{textDecoration:"none"}}>
                     <Button type="submit" onClick={handleVolunteer} style={{width: '350px'}} variant="contained" color="primary">
                         Registration
                     </Button>

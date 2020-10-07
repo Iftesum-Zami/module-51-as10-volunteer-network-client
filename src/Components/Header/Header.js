@@ -28,13 +28,13 @@ const Header = () => {
                     <Link to="/home" style={{textDecoration:"none", color: 'black', marginLeft: '10px'}}>
                         <p>Home</p>
                     </Link>
-                    <Link to="/donation" style={{textDecoration:"none", color: 'black', marginLeft: '10px'}}>
+                    <Link to="/home" style={{textDecoration:"none", color: 'black', marginLeft: '10px'}}>
                         <p>Donation</p>
                     </Link>
                     <Link to="/events" style={{textDecoration:"none", color: 'black', marginLeft: '10px'}}>
                         <p>Events</p>
                     </Link>
-                    <Link to="/blog" style={{textDecoration:"none", color: 'black', marginLeft: '10px'}}>
+                    <Link to="/home" style={{textDecoration:"none", color: 'black', marginLeft: '10px'}}>
                         <p>Blog</p>
                     </Link>
 

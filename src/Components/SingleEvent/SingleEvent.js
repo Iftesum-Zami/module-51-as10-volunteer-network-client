@@ -10,16 +10,14 @@ const SingleEvent = (props) => {
         margin: '10px',
     }
 
-    const deleteEvent = (id, event) => {
+    const deleteEvent = (id) => {
         fetch(`https://obscure-coast-50402.herokuapp.com/delete/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())
-        // .then(result => {
-        //     if (result) {
-        //         event.target.parentNode.style.display = 'none'
-        //     }
-        // })
+        .then(result => {
+            console.log('deleted successfully')
+        })
     }
 
     return (
